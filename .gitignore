@@ -23,8 +23,8 @@ out/
 Thumbs.db
 
 # Markdown files (as requested)
-*.md
-**/*.md
+GEMINI.md
+PROGRESS.md
 
 # Logs
 npm-debug.log*
