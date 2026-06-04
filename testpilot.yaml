@@ -1,0 +1,46 @@
+# TestPilot Configuration
+# Place this file in your project root as testpilot.yaml
+
+project:
+  name: "My App"
+  baseUrl: "http://localhost:8080/"   # URL of the web app to test
+
+# AI model configuration
+ai:
+  provider: "gemini"                 # gemini | claude | openai | deepseek | ollama | custom
+  model: "gemini-2.5-flash"         # model name for the provider
+  # apiKey is read from env: GEMINI_API_KEY / ANTHROPIC_API_KEY / OPENAI_API_KEY
+  # For ollama, no key needed — set baseUrl below
+  # baseUrl: "http://localhost:11434" # only for ollama or custom endpoint
+
+  # Optional: use a separate cheaper model for planning, vision model for screenshots
+  # plannerModel:
+  #   provider: "deepseek"
+  #   model: "deepseek-chat"
+  # visionModel:
+  #   provider: "gemini"
+  #   model: "gemini-2.5-flash"
+
+# Test execution settings
+execution:
+  timeout: 30000                     # ms per step (default 30s)
+  screenshotOnEveryStep: true        # capture screenshot after every action
+  headless: true                     # run browser headless (false to watch it run)
+  viewport:
+    width: 1280
+    height: 800
+
+# Reporting
+reporting:
+  outputDir: ".testpilot"            # where runs + screenshots are saved
+  baseline:
+    autoApproveFirst: true           # auto-set first run as baseline
+  notifications:
+    slack: ""                        # optional Slack webhook URL
+    email: ""                        # optional email address
+
+# Platforms to run (phase 1 = web only)
+platforms:
+  - web
+  # - android   # coming phase 2
+  # - ios       # coming phase 3

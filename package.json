@@ -1,0 +1,30 @@
+{
+  "name": "testpilot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered cross-platform QA automation",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm -r --parallel dev",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "clean": "pnpm -r clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.41",
+    "@types/uuid": "^9.0.0",
+    "playwright": "^1.44.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
+  }
+}

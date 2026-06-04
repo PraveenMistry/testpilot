@@ -1,0 +1,27 @@
+{
+  "name": "@testpilot/api",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@testpilot/core": "workspace:*",
+    "@testpilot/web-runner": "workspace:*",
+    "@testpilot/android-runner": "workspace:*",
+    "@testpilot/ios-runner": "workspace:*",
+    "express": "^4.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.17",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  }
+}
